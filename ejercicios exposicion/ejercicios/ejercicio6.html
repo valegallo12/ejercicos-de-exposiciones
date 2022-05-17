@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio propiedades</title>
+</head>
+<body>
+    <h1>Usando las propiedades del objeto Window</h1>
+    <button onclick="stopTime()" >Revisar nombre</button>;
+    <button onclick = "pedirMiNombre() " >Pedir mi nombre</button>;
+    <button onclick = "abrirYoutube()" >Abrir Youtube</button>;
+    <h2 id="demo"></h2>
+    
+
+    <script>
+        let nombre;
+        let miTiempo;
+        
+        function pedirMiNombre(){
+            nombre = window.prompt("Ingresa tu nombre por favor");
+            if (nombre != ""){
+                miTiempo = window.setTimeout(miFuncion, 5000);
+            }
+            else{
+                window.alert("Debe ingresar un nombre");
+                pedirMiNombre();
+            }
+            
+        }
+
+        function miFuncion(){
+            window.document.getElementById("demo").innerHTML = "Hola " + nombre;
+        }
+
+        function abrirYoutube(){
+            window.open("https://www.youtube.com");
+        }
+
+        function stopTime(){
+            window.clearTimeout(miTiempo);
+            revisarNombre();
+        }
+
+        function revisarNombre(){
+            let confirmacion = window.confirm("Su nombre es : " + nombre);
+            if(confirmacion == true){
+                miFuncion()
+            }
+            else{
+                window.alert("Por favor ingrese su nombre nuevamente");
+                pedirMiNombre();
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
