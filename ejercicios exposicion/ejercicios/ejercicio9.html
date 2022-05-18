@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de todo :)</title>
+    <h2 align="center">Ejemplo a desarrollar :3 </h2>
+</head>
+<body>
+    <button onclick="mensaje();">Hacer Click</button><br>
+    <h3>Selecciona una fruta:</h3>
+ <select id="SelFrutas" onchange="getFruta()">
+ <option value="Naranja">Naranja</option>
+ <option value="Mango">Mango</option>
+ <option value="Fresa">Fresa</option>
+ <option value="Uva">Uva</option>
+ </select><br>
+ <p id="pf"></p>
+ <script>
+      function mensaje() {
+      alert("Hiciste click!");
+    }
+ </script>
+ <script>
+     function getFruta() {
+     var f = document.getElementById("SelFrutas").value;
+     document.getElementById("pf").innerHTML = "La Fruta seleccionada es: " + f;
+     }
+ </script>
+  <input type="text" onkeydown="ejemplo(this);">
+  <p id="pf"></p>
+ <body>
+ <script>
+      function ejemplo() {
+      alert("Termino la carga de la pagina");
+     }
+   </script>
+</body>
+<body>
+    <script>
+     function ejemplo(x) {
+        document.getElementById('pf').innerHTML=x.value;
+        }
+    </script>
+</body>
+</html>
